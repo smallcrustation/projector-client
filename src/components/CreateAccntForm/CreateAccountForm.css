@@ -1,0 +1,13 @@
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  width: 80%;
+  border: 1px lightgray solid;
+}
+
+.error{
+  color: red;
+}
