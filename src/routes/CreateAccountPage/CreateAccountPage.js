@@ -1,7 +1,6 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 
-import CreateAccntForm from '../../components/CreateAccntForm/CreateAccountForm'
+import CreateAccntForm from '../../components/CreateAccountForm/CreateAccountForm'
 
 export default class Landing extends React.Component{
 
@@ -12,7 +11,7 @@ export default class Landing extends React.Component{
 
   render(){
     return (
-      <div className='create-accnt-form'>
+      <div className='CreateAccountPage'>
         <CreateAccntForm 
           onCreateAccountSuccess = {this.onCreateAccountSuccess}
         />

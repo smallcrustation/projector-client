@@ -8,7 +8,7 @@ export default class Landing extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
 
-    const { user_name, email, pass, pass2 } = e.target
+    const { username, email, pass, pass2 } = e.target
 
     this.setState({ error: null })
 
@@ -18,7 +18,7 @@ export default class Landing extends React.Component {
     }
 
     const newUser = {
-      user_name: user_name.value,
+      username: username.value,
       email: email.value,
       pass: pass.value
     }
@@ -39,8 +39,8 @@ export default class Landing extends React.Component {
           { error && <p className='error'>{error}</p>}
         </div>
 
-        <label htmlFor="user_name">Username</label>
-        <input type="text" id="user_name" name="user_name" required />
+        <label htmlFor="username">Username</label>
+        <input type="text" id="username" name="username" required />
 
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" required />
@@ -51,7 +51,7 @@ export default class Landing extends React.Component {
         <label htmlFor="pass2">Confirm Password</label>
         <input type="password" id="pass2" name="pass2" required />
 
-        <input type="submit" value="Create Account!" required />
+        <input type="submit" value="Create Account!" />
       </form>
     )
   }
