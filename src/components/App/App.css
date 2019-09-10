@@ -1,13 +1,21 @@
-/* .CreateAccountForm{
+form{
   display: flex;
   flex-direction: column;
 }
 
-.CreateAccountForm input{
+input{
   width: 80%;
   border: 1px lightgray solid;
 }
 
+label{
+  display: block;
+}
+
+ul{
+  list-style: none;
+}
+
 .error{
   color: red;
-} */
+}

@@ -1,9 +1,9 @@
-ul{
+nav ul{
   display: flex;
   list-style: none;
   padding: 0;
   justify-content: flex-end;
 }
-li{
+nav li{
   padding: 0px 10px;
 }

@@ -8,10 +8,15 @@ export default class Nav extends React.Component {
     return (
       <nav className="nav-bar">
         <ul>
-          <Link to='/login'>
+          <Link to="/projects">
+            <li>Projects</li>
+          </Link>
+
+          <Link to="/login">
             <li>Login</li>
           </Link>
-          <Link to='/create-account'>
+
+          <Link to="/createAccount">
             <li>Create</li>
           </Link>
         </ul>

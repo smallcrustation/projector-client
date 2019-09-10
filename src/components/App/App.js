@@ -3,10 +3,16 @@ import { Switch, Route } from 'react-router-dom'
 
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
-import Landing from '../../routes/LandingPage/LandingPage'
-import CreateAccount from '../../routes/CreateAccountPage/CreateAccountPage'
-import Login from '../../routes/LoginPage/LoginPage'
+import LandingPage from '../../routes/LandingPage/LandingPage'
+import CreateAccountPage from '../../routes/CreateAccountPage/CreateAccountPage'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import ProjectsPage from '../../routes/ProjectsPage/ProjectsPage'
+import NewProjectPage from '../../routes/NewProjectPage/NewProject'
+import ProjectPage from '../../routes/ProjectPage/ProjectPage'
+import PaymentRequestPage from '../../routes/PaymentRequestPage/PaymentRequestPage'
 import NotFound from '../../routes/NotFoundPage/NotFoundPage'
+
+import './App.css'
 
 class App extends React.Component {
   render() {
@@ -16,9 +22,13 @@ class App extends React.Component {
         <Nav />
         <main className="App__main">
           <Switch>
-            <Route exact path={'/'} component={Landing} />
-            <Route exact path={'/createAccount'} component={CreateAccount} />
-            <Route exact path={'/login'} component={Login} />
+            <Route exact path={'/'} component={LandingPage} />
+            <Route exact path={'/createAccount'} component={CreateAccountPage} />
+            <Route exact path={'/login'} component={LoginPage} />
+            <Route exact path={'/projects'} component={ProjectsPage} />
+            <Route exact path={'/newProject'} component={NewProjectPage} />
+            <Route exact path={'/project/:id'} component={ProjectPage} />
+            <Route exact path={'/paymentRequest'} component={PaymentRequestPage} />
             <Route component={NotFound} />
           </Switch>
         </main>

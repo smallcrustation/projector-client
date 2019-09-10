@@ -34,22 +34,28 @@ export default class Landing extends React.Component {
   render() {
     const { error } = this.state
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div role="alert">
-          { error && <p className='error'>{error}</p>}
+      <form className="CreateAccountForm" onSubmit={this.handleSubmit}>
+        <div role="alert">{error && <p className="error">{error}</p>}</div>
+
+        <div>
+          <label htmlFor="username">Username</label>
+          <input type="text" id="username" name="username" required />
         </div>
 
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" required />
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <div>
+          <label htmlFor="pass">Password</label>
+          <input type="password" id="pass" name="pass" required />
+        </div>
 
-        <label htmlFor="pass">Password</label>
-        <input type="password" id="pass" name="pass" required />
-
-        <label htmlFor="pass2">Confirm Password</label>
-        <input type="password" id="pass2" name="pass2" required />
+        <div>
+          <label htmlFor="pass2">Confirm Password</label>
+          <input type="password" id="pass2" name="pass2" required />
+        </div>
 
         <input type="submit" value="Create Account!" />
       </form>
