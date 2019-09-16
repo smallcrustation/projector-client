@@ -14,12 +14,12 @@ export default class ProjectsList extends React.Component {
   state = { error: null }
 
   onClickNewProject = () => {
-    console.log('Create Project')
+    // console.log('Create Project')
     return this.props.history.push('./CreateProject')
   }
 
   componentDidMount() {
-    console.log(this.context)
+    // console.log(this.context)
     // try{
     //   const projectsList = await ProjectsApiService.getProjects()
     //   console.log('project list: ', projectsList)
@@ -46,9 +46,9 @@ export default class ProjectsList extends React.Component {
           <ul>
             <ProjectsListContextConsumer>
               {value => {
-                console.log('consumer value: ', value.projectsList)
+                // console.log('consumer value: ', value.projectsList)
                 return value.projectsList.map((project) => {
-                  console.log(project.project_name)
+                  // console.log(project.project_name)
                   return <li key={project.id}>{project.project_name}</li>
                 })
               }}

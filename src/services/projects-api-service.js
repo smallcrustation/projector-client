@@ -13,6 +13,21 @@ const projectApiServer = {
     }
     console.log('API RES: ', res.json())
     return res.json()
+  },
+
+  async postProjects(newProject){
+    const res = await fetch(`${config.API_ENDPOINT}/projects`,{
+      method: 'POST',
+      headers:{
+        'Authorization' : `Bearer ${TokenService.getAuthToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newProject)
+    })
+    if(!res.ok){
+      return res.json().then(e => Promise.reject(e))
+    }
+    return res.json()
   }
 }
 

@@ -27,8 +27,7 @@ const AuthApiService = {
       return res.json().then(e => Promise.reject(e))
     }
     return res.json()
-  }
-  
+  },
 
 }
 

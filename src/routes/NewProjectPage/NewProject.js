@@ -5,13 +5,13 @@ import NewProjectForm from '../../components/NewProjectForm/NewProjectForm'
 export default class NewProjectPage extends React.Component{
 
   onSuccessfulProject = () => {
-    console.log('Payment Submitted Successfully')
-    return this.props.history.goBack()
+    console.log('Project Submitted Successfully')
+    return this.props.history.push('/projects')
   }
 
   render(){
     return(
-      <div className="PaymentRequestPage">
+      <div className="NewProjectsPage">
         <section>
           <NewProjectForm
             onSuccessfulProject={this.onSuccessfulProject}

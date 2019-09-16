@@ -9,7 +9,7 @@ export default class ProjectsPage extends React.Component {
   state = { error: null }
 
   onClickNewProject = () => {
-    console.log('Create Project')
+    // console.log('Create Project')
     return this.props.history.push('./newProject')
   }
 

@@ -7,7 +7,7 @@ import './CreateAccountForm.css'
 export default class Landing extends React.Component {
   state = { error: null }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault()
 
     const { username, email, pass, pass2 } = e.target
@@ -22,16 +22,20 @@ export default class Landing extends React.Component {
     const newUser = {
       username: username.value,
       email: email.value,
-      pass: pass.value
+      password: pass.value
     }
 
-    // AuthApiService.postUser(newUser)......
-
-
-    console.log('NEW USER CREATED')
-    console.log(newUser)
-
-    this.props.onCreateAccountSuccess()
+    try{
+      // eslint-disable-next-line no-unused-vars
+      const savedUser = await AuthApiService.createAccount(newUser)
+      username.value = ''
+      email.value = ''
+      pass.value = ''
+      pass2.value = ''
+      this.props.onCreateAccountSuccess()
+    } catch (err){
+      this.setState({error: err.error})
+    }
   }
 
   render() {

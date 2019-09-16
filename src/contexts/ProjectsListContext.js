@@ -12,7 +12,7 @@ export class ProjectsListProvider extends React.Component{
   }
 
   setProjectsList = projectsList => {
-    console.log('SETTIN PROJECTS')
+    // console.log('SETTIN PROJECTS')
     this.setState({projectsList})
   }
 
