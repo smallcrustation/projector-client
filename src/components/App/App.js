@@ -11,6 +11,8 @@ import NewProjectPage from '../../routes/NewProjectPage/NewProject'
 import ProjectPage from '../../routes/ProjectPage/ProjectPage'
 import PaymentRequestPage from '../../routes/PaymentRequestPage/PaymentRequestPage'
 import NotFound from '../../routes/NotFoundPage/NotFoundPage'
+import PrivateRoute from '../utils/PrivateRoute'
+import PublicOnlyRoute from '../utils/PublicRoute'
 
 import './App.css'
 
@@ -23,12 +25,12 @@ class App extends React.Component {
         <main className="App__main">
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
-            <Route exact path={'/createAccount'} component={CreateAccountPage} />
-            <Route exact path={'/login'} component={LoginPage} />
-            <Route exact path={'/projects'} component={ProjectsPage} />
-            <Route exact path={'/newProject'} component={NewProjectPage} />
-            <Route exact path={'/project/:id'} component={ProjectPage} />
-            <Route exact path={'/paymentRequest'} component={PaymentRequestPage} />
+            <PublicOnlyRoute path={'/createAccount'} component={CreateAccountPage}/>
+            <PublicOnlyRoute path={'/login'} component={LoginPage} />
+            <PrivateRoute path={'/projects'} component={ProjectsPage} />
+            <PrivateRoute path={'/newProject'} component={NewProjectPage} />
+            <PrivateRoute path={'/project/:id'} component={ProjectPage} />
+            <PrivateRoute path={'/paymentRequest'} component={PaymentRequestPage} />
             <Route component={NotFound} />
           </Switch>
         </main>

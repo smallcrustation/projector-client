@@ -22,6 +22,5 @@ export class ProjectsProvider extends React.Component{
     error: null
   }
 
-
 }
 

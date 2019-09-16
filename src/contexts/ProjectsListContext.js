@@ -1,10 +1,9 @@
 import React from 'react'
+// import config from '../config'
 
-// null project?
+// import projectApiServer from '../services/projects-api-service'
 
-const ProjectsListContext = React.createContext()
-
-export default ProjectsListContext
+export const ProjectsListContext = React.createContext()
 
 export class ProjectsListProvider extends React.Component{
   state = {
@@ -12,7 +11,8 @@ export class ProjectsListProvider extends React.Component{
     error: null
   }
 
-  setProjectList = projectsList => {
+  setProjectsList = projectsList => {
+    console.log('SETTIN PROJECTS')
     this.setState({projectsList})
   }
 
@@ -28,14 +28,16 @@ export class ProjectsListProvider extends React.Component{
     const value = {
       projectsList: this.state.projectsList,
       error: this.state.error,
-      setError: this.state.setError,
-      setThingList: this.setThingList
+      setError: this.setError,
+      setProjectsList: this.setProjectsList
     }
+    console.log(this.state.projectsList)
     return (
-      <ProjectsListProvider value={value}>
-        {this.props.children}
-      </ProjectsListProvider>
+      <ProjectsListContext.Provider value={value}>
+        {this.props.children} {/*placeholder for another component */}
+      </ProjectsListContext.Provider>
     )
   }
-  
 }
+
+export const ProjectsListContextConsumer = ProjectsListContext.Consumer
