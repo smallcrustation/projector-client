@@ -31,7 +31,6 @@ export class ProjectsListProvider extends React.Component{
       setError: this.setError,
       setProjectsList: this.setProjectsList
     }
-    console.log(this.state.projectsList)
     return (
       <ProjectsListContext.Provider value={value}>
         {this.props.children} {/*placeholder for another component */}

@@ -5,7 +5,7 @@ import CreateAccntForm from '../../components/CreateAccountForm/CreateAccountFor
 export default class Landing extends React.Component{
 
   onCreateAccountSuccess = () => {
-    console.log('REDIRECT TO LOGIN')
+    // console.log('REDIRECT TO LOGIN')
     return this.props.history.push('/login')
   }
 

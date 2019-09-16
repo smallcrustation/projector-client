@@ -1,5 +1,7 @@
 import React from 'react'
 
+import AuthApiService from '../../services/auth-api-service'
+
 import './CreateAccountForm.css'
 
 export default class Landing extends React.Component {
@@ -24,6 +26,7 @@ export default class Landing extends React.Component {
     }
 
     // AuthApiService.postUser(newUser)......
+
 
     console.log('NEW USER CREATED')
     console.log(newUser)
