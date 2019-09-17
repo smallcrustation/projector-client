@@ -1,11 +1,7 @@
 import React from 'react'
 import accounting from 'accounting'
 
-// import ProjectsApiServer from '../../services/projects-api-service'
-import {
-  ProjectContextConsumer,
-  ProjectContext
-} from '../../contexts/ProjectContext'
+import { ProjectContextConsumer } from '../../contexts/ProjectContext'
 
 import './ProjectDetails.css'
 
@@ -23,25 +19,49 @@ export default class ProjectDetails extends React.Component {
                 <section>
                   <ul>
                     <li>
-                      Original Project Budget: {accounting.formatMoney(project.budget_original)}
+                      Original Project Budget:{' '}
+                      {accounting.formatMoney(project.budget_original)}
                     </li>
                     <li>
-                      Project Cost Adjustment: {accounting.formatMoney(project.budget_adjusted)}
+                      Project Cost Adjustment:{' '}
+                      {accounting.formatMoney(project.budget_adjusted)}
                     </li>
                     <li>
-                      Project Budget to Date: {accounting.formatMoney(project.budget_total)}
+                      Project Budget to Date:{' '}
+                      {accounting.formatMoney(project.budget_total)}
                     </li>
                   </ul>
 
                   <ul>
-                    <li>Completed to Date: {accounting.formatMoney(project.total_completed)}</li>
-                    <li>Less Previous Amount: {accounting.formatMoney(project.total_prev_payments)}</li>
-                    <li>Current Amount Due: {accounting.formatMoney(project.current_payment)}</li>
+                    <li>
+                      Completed to Date:{' '}
+                      {accounting.formatMoney(project.total_completed)}
+                    </li>
+                    <li>
+                      Less Previous Amount:{' '}
+                      {accounting.formatMoney(project.total_prev_payments)}
+                    </li>
+                    <li>
+                      Current Amount Due:{' '}
+                      {accounting.formatMoney(project.current_payment)}
+                    </li>
                   </ul>
 
                   <ul>
-                    <li>Balance to Finish: {accounting.formatMoney(project.budget_total-project.total_completed)}</li>
-                    <li>Completion: {((project.total_completed/project.budget_total)*100).toFixed(2)}%</li>
+                    <li>
+                      Balance to Finish:{' '}
+                      {accounting.formatMoney(
+                        project.budget_total - project.total_completed
+                      )}
+                    </li>
+                    <li>
+                      Completion:{' '}
+                      {(
+                        (project.total_completed / project.budget_total) *
+                        100
+                      ).toFixed(2)}
+                      %
+                    </li>
                   </ul>
                 </section>
               )

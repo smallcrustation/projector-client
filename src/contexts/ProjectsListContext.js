@@ -4,7 +4,7 @@ export const ProjectsListContext = React.createContext()
 
 export class ProjectsListProvider extends React.Component{
   state = {
-    projectsList: [],
+    projectsList: null,
     error: null
   }
 
@@ -26,6 +26,7 @@ export class ProjectsListProvider extends React.Component{
       projectsList: this.state.projectsList,
       error: this.state.error,
       setError: this.setError,
+      clearError: this.clearError,
       setProjectsList: this.setProjectsList
     }
     return (

@@ -17,8 +17,10 @@ export default class ProjectPage extends React.Component {
     const project_id = this.props.match.params.id
     try {
       const project = await ProjectsApiServer.getProjectById(project_id)
-      // console.log(project)
+      const payments = await ProjectsApiServer.getProjectPayments(project_id)
+      // console.log('PAYMENTS :', payments)
       this.context.setProject(project)
+      this.context.setPayments(payments)
     } catch (err) {
       console.log(err)
     }

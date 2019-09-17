@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import { ProjectsListContextConsumer } from '../../contexts/ProjectsListContext'
 import { ProjectsListContext } from '../../contexts/ProjectsListContext'
-import TokenService from '../../services/token-service'
 import ProjectsApiService from '../../services/projects-api-service'
 
 import './ProjectsList.css'
@@ -11,7 +10,7 @@ import './ProjectsList.css'
 export default class ProjectsList extends React.Component {
   static contextType = ProjectsListContext
 
-  state = { error: null }
+  // state = { error: null }
 
   onClickNewProject = () => {
     // console.log('Create Project')
@@ -20,21 +19,14 @@ export default class ProjectsList extends React.Component {
 
   async componentDidMount() {
     console.log(this.context)
-    try{
+    this.context.clearError()
+    try {
       const projectsList = await ProjectsApiService.getProjects()
       console.log('project list: ', projectsList)
       this.context.setProjectsList(projectsList)
-    } catch(err) {
+    } catch (err) {
       this.context.setError(err)
     }
-
-    // fetch('http://localhost:8000/api/projects/', {
-    //   headers: {
-    //     Authorization: `Bearer ${TokenService.getAuthToken()}`
-    //   }
-    // })
-    //   .then(res => res.json())
-    //   .then(projectList => this.context.setProjectsList(projectList))
   }
 
   render() {
@@ -46,12 +38,28 @@ export default class ProjectsList extends React.Component {
           <ul>
             <ProjectsListContextConsumer>
               {value => {
-                // console.log('consumer value: ', value.projectsList)
-                return value.projectsList.map((project) => {
+                if(value.error){
+                  return (
+                    <div role="alert">
+                    {value.error && <p className="error">{value.error}</p>}
+                  </div>
+                  )
+                }
+                if(!value.projectsList){
+                  return <p>Loading...</p>
+                }
+                if(value.projectsList < 1){
+                  return <p>No Projects</p>
+                }
+                return value.projectsList.map(project => {
                   // console.log(project.project_name)
-                  return <li key={project.id}>
-                    <Link to={`/projects/${project.id}`}>{project.project_name}</Link>
-                  </li>
+                  return (
+                    <li key={project.id}>
+                      <Link to={`/projects/${project.id}`}>
+                        {project.project_name}
+                      </Link>
+                    </li>
+                  )
                 })
               }}
             </ProjectsListContextConsumer>

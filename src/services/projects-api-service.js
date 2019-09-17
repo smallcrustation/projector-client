@@ -1,7 +1,7 @@
 import config from '../config'
 import TokenService from './token-service'
 
-const projectApiServer = {
+const projectApiService = {
   async getProjects(){
     const res = await fetch(`${config.API_ENDPOINT}/projects/`,{
       headers: {
@@ -41,16 +41,21 @@ const projectApiServer = {
     }
 
     return res.json()
+  },
 
+  async getProjectPayments(project_id){
+    const res = await fetch(`${config.API_ENDPOINT}/projects/${project_id}/payments`,{
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+    })
+    if(!res.ok){
+      return res.json().then(e => Promise.reject(e))
+    }
+
+    return res.json()
   }
+  
 }
 
-// fetch('http://localhost:8000/api/projects/', {
-//   headers: {
-//     'Authorization': `Bearer ${TokenService.getAuthToken()}`
-//   },
-// })
-// .then(res => res.json())
-// .then(projectList => this.context.setProjectsList(projectList))
-
-export default projectApiServer
+export default projectApiService
