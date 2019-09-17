@@ -1,7 +1,4 @@
 import React from 'react'
-// import config from '../config'
-
-// import projectApiServer from '../services/projects-api-service'
 
 export const ProjectsListContext = React.createContext()
 

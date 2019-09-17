@@ -1,26 +1,38 @@
 import React from 'react'
 
-  // id, 
-  // project_name ,
-  // location ,
-  // budget_original ,
-  // budget_adjusted ,
-  // amount_spent ,
-  // date_created ,
-  // date_modified ,
-  // user_id
+export const ProjectContext = React.createContext()
 
-// null project?
-
-const ProjectsContext = React.createContext()
-
-export default ProjectsContext
-
-export class ProjectsProvider extends React.Component{
+export class ProjectProvider extends React.Component {
   state = {
-    thing: null,
+    project: null,
     error: null
   }
 
+  setProject = project => {
+    this.setState({ project })
+  }
+
+  setError = err => {
+    this.setState({ err })
+  }
+
+  clearError = err => {
+    this.setState({ err })
+  }
+
+  render() {
+    const value = {
+      project: this.state.project,
+      error: this.state.error,
+      setError: this.setError,
+      setProject: this.setProject
+    }
+    return (
+      <ProjectContext.Provider value={value}>
+        {this.props.children} {/*placeholder for another component */}
+      </ProjectContext.Provider>
+    )
+  }
 }
 
+export const ProjectContextConsumer = ProjectContext.Consumer

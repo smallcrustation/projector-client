@@ -5,24 +5,27 @@ import TokenService from '../../services/token-service'
 import './Nav.css'
 
 export default class Nav extends React.Component {
+  // add a context
 
+  handleLogOut = () => {
+    TokenService.clearAuthToken()
+  }
 
-  
-
-  loggedInNav() {
+  renderLoggedInNav() {
     return (
-      <div>
+      <div className="logged-in-nav">
         <Link to="/projects">Projects</Link>
-        <Link to="/logout">Logout</Link>
+        <Link onClick={this.handleLogOut} to="/">
+          Logout
+        </Link>
       </div>
     )
   }
 
-  loggedOutNav() {
+  renderLoggedOutNav() {
     return (
       <div className="logged-out-nav">
         <Link to="/login">Login</Link>
-
         <Link to="/createAccount">Create</Link>
       </div>
     )
@@ -31,7 +34,9 @@ export default class Nav extends React.Component {
   render() {
     return (
       <nav className="nav-bar">
-        {TokenService.hasAuthToken() ? this.loggedInNav() : this.loggedOutNav()}
+        {TokenService.getAuthToken()
+          ? this.renderLoggedInNav()
+          : this.renderLoggedOutNav()}
       </nav>
     )
   }

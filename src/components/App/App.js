@@ -27,9 +27,9 @@ class App extends React.Component {
             <Route exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/createAccount'} component={CreateAccountPage}/>
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
-            <PrivateRoute path={'/projects'} component={ProjectsPage} />
+            <PrivateRoute exact path={'/projects'} component={ProjectsPage} />
             <PrivateRoute path={'/newProject'} component={NewProjectPage} />
-            <PrivateRoute path={'/project/:id'} component={ProjectPage} />
+            <PrivateRoute path={'/projects/:id'} component={ProjectPage} />
             <PrivateRoute path={'/paymentRequest'} component={PaymentRequestPage} />
             <Route component={NotFound} />
           </Switch>

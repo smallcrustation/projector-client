@@ -11,7 +11,7 @@ const projectApiServer = {
     if(!res.ok){
       return res.json().then(e => Promise.reject(e))
     }
-    console.log('API RES: ', res.json())
+
     return res.json()
   },
 
@@ -28,6 +28,20 @@ const projectApiServer = {
       return res.json().then(e => Promise.reject(e))
     }
     return res.json()
+  },
+
+  async getProjectById(id){
+    const res = await fetch(`${config.API_ENDPOINT}/projects/${id}`,{
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+    })
+    if(!res.ok){
+      return res.json().then(e => Promise.reject(e))
+    }
+
+    return res.json()
+
   }
 }
 

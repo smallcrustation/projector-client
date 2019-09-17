@@ -17,15 +17,15 @@ export default class Landing extends React.Component {
     try{
       // get resp from login api. if success set val's to ''. save auth token to window. run on successful login
       const res = await AuthApiService.login(loginCredentials)
-      console.log(res.authToken)
+      // console.log(res.authToken)
       TokenService.saveAuthToken(res.authToken)
 
-      console.log('LOGIN SUCCESS?')
+      // console.log('LOGIN SUCCESS')
       this.props.onSuccessfulLogin()
 
     } catch(err) {
-      console.log(err)
-      console.log('LOGIN ERROR')
+      this.setState({error: err.error})
+      // console.log('LOGIN ERROR')
     }
   }
 

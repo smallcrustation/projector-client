@@ -1,9 +1,7 @@
-nav ul{
+.nav-bar div{
   display: flex;
   list-style: none;
   padding: 0;
-  justify-content: flex-end;
-}
-nav li{
-  padding: 0px 10px;
+  justify-content: space-around;
+
 }
