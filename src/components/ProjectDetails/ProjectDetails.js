@@ -63,7 +63,7 @@ export default class ProjectDetails extends React.Component {
   }
 
   render() {
-    console.log(this.context.project)
+    // console.log(this.context.project)
     return (
       <div className="ProjectDetails">
         {!this.context.project?'':<h3>{this.context.project.project_name}</h3>}

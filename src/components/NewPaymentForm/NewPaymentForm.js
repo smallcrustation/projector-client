@@ -1,22 +1,18 @@
 import React from 'react'
 import PaymentsApiService from '../../services/payments-api-service'
 import { ProjectContext } from '../../contexts/ProjectContext'
-import { formatMoney } from 'accounting'
-import { thisTypeAnnotation } from '@babel/types'
+import NumberFormat from 'react-number-format'
+
+import './NewPaymentForm.css'
 
 export default class NewPaymentForm extends React.Component {
   static contextType = ProjectContext
-  state = { error: null, amount_format: '' }
-
-  handleFormatCurrency = e => {
-    console.log((e.target.value))
-    this.setState({amount_format: this.state.amount_format + e.target.value})
-    console.log((this.state.amount_format))
-  }
+  state = { error: null }
 
   handleSubmit = async e => {
     e.preventDefault()
-    const payment_amount = e.target.payment.value
+
+    const payment_amount = e.target.payment.value.replace(/[$,]/g, '')
     e.target.payment.value = ''
 
     const newPayment = {
@@ -26,8 +22,6 @@ export default class NewPaymentForm extends React.Component {
       total_amount: payment_amount,
       project_id: this.context.project.id
     }
-
-    console.log(newPayment)
 
     try {
       // eslint-disable-next-line no-unused-vars
@@ -40,6 +34,7 @@ export default class NewPaymentForm extends React.Component {
 
   render() {
     const error = this.state.error
+    // ADD if else to go back to projects if !this.context.project
     return (
       <div className="NewPaymentForm">
         {!this.context.project ? (
@@ -48,16 +43,19 @@ export default class NewPaymentForm extends React.Component {
           <h3>{this.context.project.project_name}</h3>
         )}
         <h3>Payment Request</h3>
-        <form onSubmit={this.handleSubmit}>
-          <div role="alert">{error && <p className="error">{error}</p>}</div>
-          <label htmlFor="payment">Amount</label>
-          <input
-            onChange={this.handleFormatCurrency}
-            type="text"
-            id="payment"
+        <form className="NewPaymentForm__form" onSubmit={this.handleSubmit}>
+          {console.log(error)}
+          <div role="alert">{error && error.map(error => <p className="error">{error}</p>)}</div>
+          <label htmlFor="payment" className="NewPaymentForm__label">
+            Amount
+          </label>
+          <NumberFormat
             name="payment"
-            placeholder="$241.00"
-            value={this.state.amount_format}
+            className="dollar-input"
+            placeholder="$0.00"
+            thousandSeparator={true}
+            prefix={'$'}
+            decimalScale={2}
           />
 
           <input type="submit" value="Submit Payment" />
