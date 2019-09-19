@@ -1,7 +1,13 @@
-.nav-bar div{
-  display: flex;
-  list-style: none;
-  padding: 0;
-  justify-content: space-around;
+.nav-bar a{
+  display: block;
+  padding: 10px 10px 0;
+}
 
+.nav-bar a:nth-child(even){
+  border-left: 1px black solid;
+}
+
+
+.nav-bar{
+  display: flex;
 }

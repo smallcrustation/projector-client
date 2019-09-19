@@ -9,7 +9,7 @@ export default class ProjectPage extends React.Component {
   static contextType = ProjectContext
 
   onClickNewPaymentRequest = () => {
-    console.log('NEW PAYMENT REQUEST')
+    // console.log('NEW PAYMENT REQUEST')
     return this.props.history.push('/paymentRequest')
   }
 
@@ -23,6 +23,7 @@ export default class ProjectPage extends React.Component {
       this.context.setPayments(payments)
     } catch (err) {
       console.log(err)
+      this.context.setError(err)
     }
   }
 

@@ -2,7 +2,34 @@
   border: 1px solid black;
 }
 
-.ProjectsList ul {
-  list-style: none;
-  padding: none;
+.ProjectsList__header{
+  /* text-align: center; */
+  font-size: 29px;
+  margin: 10px 0 15px 0;
+  padding: 0 20px 3px;
+  background-image: linear-gradient(to right, black, black);
+  /* background-position: bottom center ; */
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 35% 2px;
+}
+
+.ProjectsList__li{
+  font-size: 20px;
+  background-color: white;
+  padding: 10px 20px;
+  margin: 10px 0 0;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.ProjectsList__ul{
+  background-color: crimson;
+  margin: 0;
+  padding: 1px 0 10px 10px;
+}
+
+.ProjectsList a:visited,.ProjectsList a:visited{
+  color: black;
 }

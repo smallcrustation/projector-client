@@ -17,11 +17,13 @@ export default class NewProjectForm extends React.Component {
     }
 
     try {
+      
+      // eslint-disable-next-line no-unused-vars
       const savedProject = await ProjectsApiService.postProjects(newProject)
       project_name.value = ''
       location.value = ''
       budget.value = ''
-      console.log(savedProject)
+      // console.log(savedProject)
       this.props.onSuccessfulProject()
     } catch (err) {
       this.setState({ error: err.error })

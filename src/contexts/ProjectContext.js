@@ -34,7 +34,7 @@ export class ProjectProvider extends React.Component {
       setProject: this.setProject,
       setPayments: this.setPayments
     }
-    console.log('PROJECT CONTEXT')
+    // console.log('PROJECT CONTEXT')
     return (
       <ProjectContext.Provider value={value}>
         {this.props.children} {/*placeholder for another component */}

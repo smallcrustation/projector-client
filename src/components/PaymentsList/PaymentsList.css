@@ -1,3 +1,24 @@
 .PaymentsList{
+  margin: 15px 0 50px 0;
   border: 1px solid black;
+}
+
+.PaymentsList section{
+  display: flex;
+  flex-direction: column;
+}
+
+.PaymentsList p{
+  text-align: center;
+}
+
+.PaymentsList__btn{
+  padding: 20px;
+}
+
+#PaymentsList__table{
+  margin: 0 auto;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  border-collapse: collapse;
 }

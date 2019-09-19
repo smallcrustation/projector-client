@@ -2,6 +2,26 @@
   border: 1px solid black;
 }
 
-.ProjectDetails ul{
-  list-style: none;
+#ProjectDetails__table{
+   margin: 0 auto;
+   margin-bottom: 20px;
+   line-height: 1.6;
+   border-collapse: collapse;
+}
+
+#ProjectDetails__table td{
+  border-bottom: 1px black solid;
+}
+
+#ProjectDetails__table td:last-child{
+  text-align: right;
+}
+
+#ProjectDetails__table .thick-border td{
+  border-bottom: 2px black solid;
+  border-bottom-color: darkslateblue;
+}
+
+#ProjectDetails__table .space{
+  border: none;
 }

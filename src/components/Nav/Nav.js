@@ -6,38 +6,52 @@ import './Nav.css'
 
 export default class Nav extends React.Component {
   // add a context
+  // state = {isLoggedIn: false}
+
+  // checkLogIn(){
+  //   if(TokenService.hasAuthToken()){
+  //     this.setState({isLoggedIn: true})
+  //   }
+  // }
+
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState !== this.state){
+  //     this.checkLogIn()
+  //   }
+  // }
 
   handleLogOut = () => {
     TokenService.clearAuthToken()
   }
 
   renderLoggedInNav() {
+    // console.log('Nav State: ', this.state)
     return (
-      <div className="logged-in-nav">
+      <nav className="logged-in-nav nav-bar">
         <Link to="/projects">Projects</Link>
         <Link onClick={this.handleLogOut} to="/">
           Logout
         </Link>
-      </div>
+      </nav>
     )
   }
 
   renderLoggedOutNav() {
     return (
-      <div className="logged-out-nav">
-        <Link to="/login">Login</Link>
+      <nav className="logged-out-nav nav-bar">
+        <Link to="/login"><span>Login</span></Link>
         <Link to="/createAccount">Create</Link>
-      </div>
+      </nav>
     )
   }
 
   render() {
     return (
-      <nav className="nav-bar">
-        {TokenService.getAuthToken()
+      // <nav className="nav-bar">
+        TokenService.getAuthToken()
           ? this.renderLoggedInNav()
-          : this.renderLoggedOutNav()}
-      </nav>
+          : this.renderLoggedOutNav()
+      // </nav>
     )
   }
 }
