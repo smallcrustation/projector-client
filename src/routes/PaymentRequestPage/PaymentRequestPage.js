@@ -9,12 +9,17 @@ export default class PaymentRequestPage extends React.Component{
     return this.props.history.goBack()
   }
 
+  ifNoProjectContext = () => {
+    return this.props.history.goBack()
+  }
+
   render(){
     return(
       <div className="PaymentRequestPage">
         <section>
           <NewPaymentForm
             onSuccessfulPayment={this.onSuccessfulPayment}
+            ifNoProjectContext={this.ifNoProjectContext}
           />
         </section>
       </div>

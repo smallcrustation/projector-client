@@ -10,8 +10,8 @@ export default class Header extends React.Component{
 
   render(){
     return (
-      <header>
-        <Link to='/'><h1>Projector</h1></Link>
+      <header className="Header">
+        <Link to='/' className="Header__h1"><h1 className="Header__h1">Projector</h1></Link>
         <Nav />
       </header>
     )

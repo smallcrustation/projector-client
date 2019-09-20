@@ -3,6 +3,12 @@ h1{
   font-size: 25px;
   margin: 0 10px ;
   padding: .4em 0;
+  transition: .3s;
+}
+
+h1:hover{
+  font-size: 30px;
+  background: none;
 }
 
 header{
@@ -10,4 +16,8 @@ header{
   display: flex;
   justify-content: space-between;
   align-content: center;
+}
+
+.Header__h1:hover{
+  background-color: white;
 }

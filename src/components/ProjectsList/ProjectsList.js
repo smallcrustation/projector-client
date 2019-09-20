@@ -49,7 +49,7 @@ export default class ProjectsList extends React.Component {
                   return <p>Loading...</p>
                 }
                 if (value.projectsList < 1) {
-                  return <p>No Projects</p>
+                  return <p>No Projects<br/>Click New Project to make your first project!</p>
                 }
                 return value.projectsList.map(project => {
                   // console.log(project.project_name)

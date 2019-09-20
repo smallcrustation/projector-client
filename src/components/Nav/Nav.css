@@ -1,9 +1,13 @@
 .nav-bar a{
-  padding: 1em;
+  padding: .5em 1em;
+  margin: 0;
+  box-shadow: none;
+  border-bottom: none;
+  border-top: none;
 }
 
 .nav-bar a:nth-child(even){
-  border-left: 1px black solid;
+  border-left: none;
 }
 
 

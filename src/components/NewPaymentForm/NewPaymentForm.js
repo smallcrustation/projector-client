@@ -35,34 +35,43 @@ export default class NewPaymentForm extends React.Component {
   render() {
     const error = this.state.error
     // ADD if else to go back to projects if !this.context.project
-    return (
-      <div className="NewPaymentForm">
-        {!this.context.project ? (
-          ''
-        ) : (
-          <h3 className="low-header">{this.context.project.project_name}</h3>
-        )}
-        <h3>Payment Request</h3>
-        <form className="NewPaymentForm__form" onSubmit={this.handleSubmit}>
-          <div role="alert">{error &&<p className="error">{error}</p>}</div>
-          <label htmlFor="payment" className="NewPaymentForm__label">
-            Amount
-          </label>
-          <NumberFormat
-            name="payment"
-            id="payment"
-            className="dollar-input"
-            placeholder="$0.00"
-            thousandSeparator={true}
-            prefix={'$'}
-            decimalScale={2}
-            fixedDecimalScale={2}
-            required
-          />
+    let content = ''
 
-          <input type="submit" value="Submit Payment" />
-        </form>
-      </div>
+    if (this.context.project) {
+      content = (
+        <div className="NewPaymentForm">
+          {!this.context.project ? (
+            ''
+          ) : (
+            <h3 className="low-header">{this.context.project.project_name}</h3>
+          )}
+          <h3>Payment Request</h3>
+          <form className="NewPaymentForm__form" onSubmit={this.handleSubmit}>
+            <div role="alert">{error && <p className="error">{error}</p>}</div>
+            <label htmlFor="payment" className="NewPaymentForm__label">
+              Amount
+            </label>
+            <NumberFormat
+              name="payment"
+              id="payment"
+              className="dollar-input"
+              placeholder="$0.00"
+              thousandSeparator={true}
+              prefix={'$'}
+              decimalScale={2}
+              fixedDecimalScale={2}
+              required
+            />
+
+            <input type="submit" value="Submit Payment" />
+          </form>
+        </div>
+      )
+    } else {
+      this.props.ifNoProjectContext()
+    }
+    return (
+      <div>{content}</div>
     )
   }
 }

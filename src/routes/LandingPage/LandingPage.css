@@ -8,4 +8,10 @@
 
 .LandingPage__h3{
   background: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.LandingPage__p{
+  padding: 2em 0;
 }
