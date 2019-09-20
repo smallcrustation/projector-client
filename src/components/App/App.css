@@ -19,24 +19,69 @@ ul{
 button{
   border: 3px solid black;
   box-shadow: -3px 5px;
-  margin: 10px;
+  margin: 20px;
   background-color: white;
-  padding: 5px 10px;
+  padding: 10px 15px;
   font-size: 20px;
+  outline-color: slategrey;
+  transition: 0.3s;
+}
+
+button:hover, input[type='submit']:hover{
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: lightgray;
 }
 
 input[type='submit']{
   border: 3px solid black;
   box-shadow: -3px 5px;
-  margin: 10px;
+  margin: 20px;
   background-color: white;
-  padding: 5px 10px;
+  padding: 15px 10px;
   font-size: 20px;
+  transition: 0.3s;
+}
+
+input[type='submit']:hover{
+  background-color: lightgreen;
+}
+
+input:focus, select:focus, textarea:focus, button:focus a:focus{
+  outline-color: slategrey;
+}
+
+form{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label{
+  font-size: 30px;
+}
+
+input{
+  font-size: 27px;
+  margin: 15px;
+  border: 1px solid black;
 }
 
 a{
+  outline-color: slategrey;
   text-decoration: none;
+  transition: 0.3s;
 }
+
+a:hover{
+  background-color: lightgray;
+}
+
+
 
 h3{
   /* text-align: center; */
@@ -68,20 +113,8 @@ a:visited{
   margin: 10px;
 }
 
-form{
-  margin-top: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.low-header{
+  /* padding-top: 40px; */
+  margin-top: 60px;
 }
 
-label{
-  font-size: 30px;
-}
-
-input{
-  font-size: 27px;
-  margin: 10px;
-  border: 1px solid black;
-}

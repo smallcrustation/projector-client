@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberFormat from 'react-number-format'
 
 import ProjectsApiService from '../../services/projects-api-service'
 
@@ -13,7 +14,7 @@ export default class NewProjectForm extends React.Component {
     const newProject = {
       project_name: project_name.value,
       location: location.value,
-      budget_original: budget.value
+      budget_original: budget.value.replace(/[$,]/g, '')
     }
 
     try {
@@ -33,8 +34,9 @@ export default class NewProjectForm extends React.Component {
   render() {
     const {error} = this.state
     return (
+
       <div className="NewProjectForm">
-        <h3>New Project</h3>
+        <h3 className="low-header">New Project</h3>
         <form onSubmit={this.handleSubmit}>
           <div role="alert">{error && <p className="error">{error}</p>}</div>
 
@@ -45,7 +47,17 @@ export default class NewProjectForm extends React.Component {
           <input type="address" id="location" name="location" />
 
           <label htmlFor="budget">Budget</label>
-          <input type="currency" id="budget" name="budget" required/>
+          <NumberFormat
+            name="budget"
+            id="budget"
+            className="dollar-input"
+            placeholder="$0.00"
+            thousandSeparator={true}
+            prefix={'$'}
+            decimalScale={2}
+            fixedDecimalScale={2}
+            required
+          />
 
           <input type="submit" value="Submit" />
         </form>

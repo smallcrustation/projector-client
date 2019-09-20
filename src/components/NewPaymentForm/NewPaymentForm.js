@@ -40,22 +40,24 @@ export default class NewPaymentForm extends React.Component {
         {!this.context.project ? (
           ''
         ) : (
-          <h3>{this.context.project.project_name}</h3>
+          <h3 className="low-header">{this.context.project.project_name}</h3>
         )}
         <h3>Payment Request</h3>
         <form className="NewPaymentForm__form" onSubmit={this.handleSubmit}>
-          {console.log(error)}
-          <div role="alert">{error && error.map(error => <p className="error">{error}</p>)}</div>
+          <div role="alert">{error &&<p className="error">{error}</p>}</div>
           <label htmlFor="payment" className="NewPaymentForm__label">
             Amount
           </label>
           <NumberFormat
             name="payment"
+            id="payment"
             className="dollar-input"
             placeholder="$0.00"
             thousandSeparator={true}
             prefix={'$'}
             decimalScale={2}
+            fixedDecimalScale={2}
+            required
           />
 
           <input type="submit" value="Submit Payment" />

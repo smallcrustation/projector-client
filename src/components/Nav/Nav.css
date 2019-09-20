@@ -1,6 +1,5 @@
 .nav-bar a{
-  display: block;
-  padding: 10px 10px 0;
+  padding: 1em;
 }
 
 .nav-bar a:nth-child(even){
@@ -10,4 +9,5 @@
 
 .nav-bar{
   display: flex;
+  align-content: flex-end;
 }

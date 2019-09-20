@@ -2,7 +2,10 @@ import React from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
 
+import {UserContext} from '../../contexts/UserContext'
+
 export default class Landing extends React.Component {
+  static contextType = UserContext
   state = { error: null }
 
   handleSubmit = async e => {
@@ -16,10 +19,10 @@ export default class Landing extends React.Component {
 
     try{
       // get resp from login api. if success set val's to ''. save auth token to window. run on successful login
-      const res = await AuthApiService.login(loginCredentials)
+      const user = await AuthApiService.login(loginCredentials)
       // console.log(res.authToken)
-      TokenService.saveAuthToken(res.authToken)
-
+      TokenService.saveAuthToken(user.authToken)
+      this.context.setUser('logged in')
       // console.log('LOGIN SUCCESS')
       this.props.onSuccessfulLogin()
 

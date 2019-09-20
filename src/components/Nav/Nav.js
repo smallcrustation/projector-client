@@ -1,27 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
+import {UserContext} from '../../contexts/UserContext'
 
 import './Nav.css'
 
 export default class Nav extends React.Component {
-  // add a context
-  // state = {isLoggedIn: false}
-
-  // checkLogIn(){
-  //   if(TokenService.hasAuthToken()){
-  //     this.setState({isLoggedIn: true})
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps, prevState){
-  //   if(prevState !== this.state){
-  //     this.checkLogIn()
-  //   }
-  // }
+  static contextType = UserContext
 
   handleLogOut = () => {
     TokenService.clearAuthToken()
+    this.context.setUser(null)
   }
 
   renderLoggedInNav() {
@@ -39,7 +28,7 @@ export default class Nav extends React.Component {
   renderLoggedOutNav() {
     return (
       <nav className="logged-out-nav nav-bar">
-        <Link to="/login"><span>Login</span></Link>
+        <Link to="/login">Login</Link>
         <Link to="/createAccount">Create</Link>
       </nav>
     )

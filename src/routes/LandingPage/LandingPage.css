@@ -1,0 +1,11 @@
+.LandingPage{
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.LandingPage__h3{
+  background: none;
+}
