@@ -75,6 +75,7 @@ input{
 }
 
 a{
+  color: black;
   outline-color: slategrey;
   text-decoration: none;
   transition: 0.3s;
