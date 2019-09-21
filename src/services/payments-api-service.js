@@ -3,7 +3,7 @@ import TokenService from './token-service'
 
 const paymentsApiService = {
   async postPayment(newPayment){
-    console.log(newPayment)
+    // console.log(newPayment)
     const res = await fetch(`${config.API_ENDPOINT}/payments/`, {
       method: 'POST',
       headers: {

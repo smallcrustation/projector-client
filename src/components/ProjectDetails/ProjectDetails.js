@@ -69,7 +69,7 @@ export default class ProjectDetails extends React.Component {
         {!this.context.project?'':<h3>{this.context.project.project_name}</h3>}
         <h3 className="ProjectDetails_header">Details</h3>
         {this.renderProjectTable()}
-        {/* <ProjectContextConsumer>
+        {/* <ProjectContextConsumer> RENDER PROPS VERSION
           {value => {
             // console.log(value.project)
             const project = value.project

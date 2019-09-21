@@ -5,7 +5,7 @@ import NewPaymentForm from '../../components/NewPaymentForm/NewPaymentForm'
 export default class PaymentRequestPage extends React.Component{
 
   onSuccessfulPayment = () => {
-    console.log('Payment Submitted Successfully')
+    // console.log('Payment Submitted Successfully')
     return this.props.history.goBack()
   }
 
