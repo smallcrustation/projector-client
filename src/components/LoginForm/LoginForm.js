@@ -7,10 +7,10 @@ import Loading from '../Loading/Loading'
 
 export default class Landing extends React.Component {
   static contextType = UserContext
-  state = { error: null, Loading: false }
+  state = { error: null, loading: false }
 
   handleSubmit = async e => {
-    this.setState({ Loading: true })
+    this.setState({ loading: true })
     e.preventDefault()
     const { username, pass } = e.target
 
@@ -26,29 +26,32 @@ export default class Landing extends React.Component {
       TokenService.saveAuthToken(user.authToken)
       this.context.setUser('logged in')
       // console.log('LOGIN SUCCESS')
-      this.setState({ Loading: false })
+      this.setState({ loading: false })
       this.props.onSuccessfulLogin()
     } catch (err) {
-      this.setState({ Loading: false })
-      this.setState({ error: err.error })
+      this.setState({ error: err.error, loading: false })
       // console.log('LOGIN ERROR')
     }
   }
 
   render() {
-    const { error } = this.state
+    const { error, loading } = this.state
     return (
       <form className="LoginForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="error">{error}</p>}</div>
-        <div>{this.state.Loading && <Loading />}</div>
+        {loading ? (
+          <div><Loading /></div>
+        ) : (
+          <div>
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" name="username" required />
 
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" required />
+            <label htmlFor="pass">Password</label>
+            <input type="password" id="pass" name="pass" required />
 
-        <label htmlFor="pass">Password</label>
-        <input type="password" id="pass" name="pass" required />
-
-        <input type="submit" value="Login" />
+            <input type="submit" value="Login" />
+          </div>
+        )}
       </form>
     )
   }
