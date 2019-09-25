@@ -36,7 +36,11 @@ export default class Landing extends React.Component {
       content = (
         <article>
           <p className="LandingPage__p">
-            If this is your first time using the app please click 'Create'
+            Projector is an app designed for you to track your project by it's funding.
+            <br/>
+            If this is your first time using the app please click 'Create' to create an account.
+            <br/>
+            (demo login user:user pass:password)
           </p>
           <Link className="link-btn" to="/login">
             Login

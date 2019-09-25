@@ -5,7 +5,7 @@ import NewProjectForm from '../../components/NewProjectForm/NewProjectForm'
 export default class NewProjectPage extends React.Component{
 
   onSuccessfulProject = () => {
-    console.log('Project Submitted Successfully')
+    // console.log('Project Submitted Successfully')
     return this.props.history.push('/projects')
   }
 
