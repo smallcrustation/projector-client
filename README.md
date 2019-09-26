@@ -5,10 +5,10 @@ Projector keeps track of your projects by your projects budget as you make payme
 https://projector.krill.now.sh/
 
 ### Implements
--React
--Express
--PostgreSQL
--Authentication w/ JSON web tokens
+- React
+- Express
+- PostgreSQL
+- Authentication w/ JSON web tokens
 
 server api: https://github.com/smallcrustation/projector-server
 
