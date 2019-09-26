@@ -44,7 +44,7 @@ export default class NewProjectForm extends React.Component {
           <input type="text" id="project_name" name="project_name" required/>
 
           <label htmlFor="location">Location</label>
-          <input type="address" id="location" name="location" />
+          <input type="address" id="location" name="location" required/>
 
           <label htmlFor="budget">Budget</label>
           <NumberFormat

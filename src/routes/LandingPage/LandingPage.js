@@ -53,7 +53,7 @@ export default class Landing extends React.Component {
     }
     return (
       <section className="LandingPage">
-        <h3 className="LandingPage__h3">Welcome to Projector</h3>
+        <h2 className="LandingPage__h3">Welcome to Projector</h2>
         {content}
       </section>
     )

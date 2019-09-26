@@ -11,7 +11,7 @@ export default class ProjectDetails extends React.Component {
 
   renderProjectTable() {
     if (this.props.loading) {
-      return <p className="loading-dots">Loading</p>
+      return <p className="loading-dots" style={{textAlign: 'center'}}>Loading</p>
     }
 
     const fm = formatMoney

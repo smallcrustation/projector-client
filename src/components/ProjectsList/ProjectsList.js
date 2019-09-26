@@ -6,7 +6,6 @@ import { ProjectsListContext } from '../../contexts/ProjectsListContext'
 import ProjectsApiService from '../../services/projects-api-service'
 
 import './ProjectsList.css'
-import Loading from '../Loading/Loading'
 
 export default class ProjectsList extends React.Component {
   static contextType = ProjectsListContext
