@@ -10,7 +10,7 @@ import './ProjectsList.css'
 export default class ProjectsList extends React.Component {
   static contextType = ProjectsListContext
 
-  // state = { error: null }
+  state = { loading: false }
 
   onClickNewProject = () => {
     // console.log('Create Project')
@@ -19,18 +19,21 @@ export default class ProjectsList extends React.Component {
 
   async componentDidMount() {
     // console.log(this.context)
+    this.setState({loading: true})
     this.context.clearError()
     try {
       const projectsList = await ProjectsApiService.getProjects()
       // console.log('project list: ', projectsList)
       this.context.setProjectsList(projectsList)
+      this.setState({loading: false})
     } catch (err) {
+      this.setState({loading: false})
       this.context.setError(err)
     }
   }
 
   render() {
-    // const { error } = this.state
+    const { loading } = this.state
     return (
       <div className="ProjectsList">
         <h3 className="ProjectsList__header">Projects</h3>
@@ -45,8 +48,8 @@ export default class ProjectsList extends React.Component {
                     </div>
                   )
                 }
-                if (!value.projectsList) {
-                  return <p>Loading...</p>
+                if (loading) {
+                  return <h2 className="loading-dots">Loading</h2>
                 }
                 if (value.projectsList < 1) {
                   return <p>No Projects<br/>Click New Project to make your first project!</p>

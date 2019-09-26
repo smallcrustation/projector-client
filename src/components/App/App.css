@@ -1,31 +1,30 @@
-#root{
+#root {
   max-width: 800px;
   margin: 0 auto;
 }
 
-body{
-  
+body {
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
 
-input{
+input {
   width: 80%;
   border: 1px lightgray solid;
 }
 
-label{
+label {
   display: block;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-button{
+button {
   border: 3px solid black;
   box-shadow: -3px 5px;
   margin: 20px;
@@ -36,12 +35,11 @@ button{
   transition: 0.3s;
 }
 
-a:active{
+a:active {
   background-color: lightgray;
 }
 
-
-input[type='submit']{
+input[type='submit'] {
   border: 3px solid black;
   box-shadow: -3px 5px;
   margin: 20px;
@@ -51,12 +49,14 @@ input[type='submit']{
   transition: 0.3s;
 }
 
-
-input:focus, select:focus, textarea:focus, button:focus a:focus{
+input:focus,
+select:focus,
+textarea:focus,
+button:focus a:focus {
   outline-color: slategrey;
 }
 
-form{
+form {
   margin-top: 3em;
   display: flex;
   flex-direction: column;
@@ -64,24 +64,24 @@ form{
   justify-content: center;
 }
 
-label{
+label {
   font-size: 30px;
 }
 
-input{
+input {
   font-size: 27px;
   margin: 15px;
   border: 1px solid black;
 }
 
-a{
+a {
   color: black;
   outline-color: slategrey;
   text-decoration: none;
   transition: 0.3s;
 }
 
-h3{
+h3 {
   /* text-align: center; */
   font-size: 29px;
   margin: 10px 0 15px 0;
@@ -93,30 +93,30 @@ h3{
   background-size: 8em 2px;
 }
 
-a:visited{
+a:visited {
   color: black;
 }
 
-.error{
+.error {
   color: red;
 }
 
-.thick-brdr{
+.thick-brdr {
   border-width: 5px;
 }
 
-.dollar-input{
+.dollar-input {
   font-size: 27px;
   text-align: center;
   margin: 10px;
 }
 
-.low-header{
+.low-header {
   /* padding-top: 40px; */
   margin-top: 60px;
 }
 
-.link-btn{
+.link-btn {
   border: 3px solid black;
   box-shadow: -3px 5px;
   margin: 20px;
@@ -125,6 +125,30 @@ a:visited{
   font-size: 20px;
   outline-color: slategrey;
   transition: 0.3s;
+}
+
+.loading-dots:after {
+  content: ' .';
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: black;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: .25em 0 0 black, .5em 0 0 black;
+  }
 }
 
 /* 
@@ -298,20 +322,20 @@ a:visited{
 
 @media only screen and (min-width: 800px) {
   /* desktop */
-  button:hover, input[type='submit']:hover{
+  button:hover,
+  input[type='submit']:hover {
     cursor: pointer;
   }
-  
-  button:hover{
+
+  button:hover {
     background-color: lightgray;
   }
-  
-  input[type='submit']:hover{
+
+  input[type='submit']:hover {
     background-color: lightgreen;
   }
 
-  a:hover{
+  a:hover {
     background-color: lightgray;
   }
-  
 }
