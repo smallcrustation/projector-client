@@ -10,8 +10,8 @@ export default class ProjectDetails extends React.Component {
   static contextType = ProjectContext
 
   renderProjectTable() {
-    if (!this.context.project) {
-      return <div>Loading...</div>
+    if (this.props.loading) {
+      return <p className="loading-dots">Loading</p>
     }
 
     const fm = formatMoney

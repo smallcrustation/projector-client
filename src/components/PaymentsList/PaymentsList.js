@@ -12,7 +12,7 @@ export default class PaymentsList extends React.Component {
   renderPayments() {
     const payments = this.context.payments
 
-    if (!payments) return <p>Loading...</p>
+    if (this.props.loading) return <p className="loading-dots">Loading</p>
     if (payments.length < 1)
       return (
         <p>

@@ -7,6 +7,7 @@ import { ProjectContext } from '../../contexts/ProjectContext'
 
 export default class ProjectPage extends React.Component {
   static contextType = ProjectContext
+  state = {loading: true}
 
   onClickNewPaymentRequest = () => {
     // console.log('NEW PAYMENT REQUEST')
@@ -14,6 +15,7 @@ export default class ProjectPage extends React.Component {
   }
 
   async componentDidMount() {
+    this.setState({loading: true})
     const project_id = this.props.match.params.id
     try {
       const project = await ProjectsApiServer.getProjectById(project_id)
@@ -21,19 +23,25 @@ export default class ProjectPage extends React.Component {
       // console.log('PAYMENTS :', payments)
       this.context.setProject(project)
       this.context.setPayments(payments)
+      this.setState({loading: false})
     } catch (err) {
       // console.log(err)
+      this.setState({loading: false})
       this.context.setError(err)
     }
+    
   }
 
   render() {
     return (
       <div className="ProjectPage">
         <section>
-          <ProjectDetails />
+          <ProjectDetails 
+            loading={this.state.loading}
+          />
           <PaymentsList
             onClickNewPaymentRequest={this.onClickNewPaymentRequest}
+            loading={this.state.loading}
           />
         </section>
       </div>
