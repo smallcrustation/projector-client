@@ -17,8 +17,6 @@ export default class Landing extends React.Component {
   }
 
   render() {
-    console.log(this.props.location.state)
-    console.log(this.state.accountCreated)
     return (
       <div className="LoginPage">
         {this.state.accountCreated?<h2 className="success">Account Created! please login</h2>:''}

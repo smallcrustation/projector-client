@@ -14,9 +14,23 @@ export default class Landing extends React.Component {
 
     const { username, email, pass, pass2 } = e.target
 
+    // Validation... anymore make separate func
+    let validErr = null
     if (pass.value !== pass2.value) {
       // remove return when more validation added
-      return this.setState({ error: 'Passwords must match!' })
+      validErr = 'Passwords must match!'
+    }
+
+    if (username.value.includes(' ')) {
+      validErr
+        ? (validErr += '\nUsername cannot contain spaces.')
+        : (validErr = 'Username cannot contain spaces.')
+    }
+
+    if (validErr) {
+      // console.log('valid err')
+      this.setState({ loading: false })
+      return this.setState({error: validErr})
     }
 
     const newUser = {
@@ -32,7 +46,7 @@ export default class Landing extends React.Component {
       email.value = ''
       pass.value = ''
       pass2.value = ''
-      this.setState({loading: false })
+      this.setState({ loading: false })
       this.props.onCreateAccountSuccess()
     } catch (err) {
       this.setState({ error: err.error, loading: false })
