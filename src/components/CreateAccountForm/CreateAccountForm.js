@@ -35,7 +35,7 @@ export default class Landing extends React.Component {
       this.setState({loading: false })
       this.props.onCreateAccountSuccess()
     } catch (err) {
-      this.setState({ error: err.error, loading: true })
+      this.setState({ error: err.error, loading: false })
     }
   }
 

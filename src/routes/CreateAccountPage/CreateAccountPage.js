@@ -6,7 +6,8 @@ export default class Landing extends React.Component{
 
   onCreateAccountSuccess = () => {
     // console.log('REDIRECT TO LOGIN')
-    return this.props.history.push('/login')
+    return this.props.history.push({pathname: '/login', state:{created: true}})
+
   }
 
   render(){

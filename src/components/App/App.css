@@ -156,6 +156,21 @@ a:visited {
   }
 }
 
+.success{
+  color: forestgreen;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 40px;
+  /* animation: success 3s steps(10, end) ; */
+}
+
+@keyframes success{
+  25%{color: rgba(0, 0, 0, 0)}
+  50%{color: lightgreen}
+  75%{color: green}
+  100%{color: grey}
+}
+
 /* 
 .ripple {
   background-position: center;
