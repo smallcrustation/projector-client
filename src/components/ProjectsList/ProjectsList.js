@@ -41,6 +41,9 @@ export default class ProjectsList extends React.Component {
           <ul className="ProjectsList__ul">
             <ProjectsListContextConsumer>
               {value => {
+                if(!value){
+                  return <p>No Consumer Context</p>
+                }
                 if (value.error) {
                   return (
                     <div role="alert">

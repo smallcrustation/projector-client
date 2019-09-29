@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<form
+  className="CreateAccountForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div>
+     
+    <div>
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        id="username"
+        name="username"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        id="email"
+        name="email"
+        required={true}
+        type="email"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="pass"
+      >
+        Password
+      </label>
+      <input
+        id="pass"
+        name="pass"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="pass2"
+      >
+        Confirm Password
+      </label>
+      <input
+        id="pass2"
+        name="pass2"
+        required={true}
+        type="password"
+      />
+    </div>
+    <input
+      type="submit"
+      value="Create Account!"
+    />
+  </div>
+</form>
+`;

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="Header"
+  >
+    <a
+      className="Header__h1"
+      href="/"
+      onClick={[Function]}
+    >
+      <h1
+        className="Header__h1"
+      >
+        Projector
+      </h1>
+    </a>
+    <nav
+      className="logged-out-nav nav-bar"
+    >
+      <a
+        className="link-btn"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+      <a
+        className="link-btn"
+        href="/createAccount"
+        onClick={[Function]}
+      >
+        Create
+      </a>
+    </nav>
+  </header>
+  <main
+    className="App__main"
+  >
+    <section
+      className="LandingPage"
+    >
+      <h2
+        className="LandingPage__h3"
+      >
+        Welcome to Projector
+      </h2>
+      <article>
+        <p
+          className="LandingPage__p"
+        >
+          Projector is an app designed for you to track your project by it's funding.
+          <br />
+          If this is your first time using the app please click 'Create' to create an account.
+          <br />
+          (demo login user:user pass:password)
+        </p>
+        <a
+          className="link-btn"
+          href="/login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="link-btn"
+          href="/createAccount"
+          onClick={[Function]}
+        >
+          Create
+        </a>
+      </article>
+    </section>
+  </main>
+</div>
+`;

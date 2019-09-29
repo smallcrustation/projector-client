@@ -37,6 +37,11 @@ export default class NewPaymentForm extends React.Component {
     // ADD if else to go back to projects if !this.context.project
     let content = ''
 
+    // for smoke test
+    if(!this.context){
+      return content
+    }
+
     if (this.context.project) {
       content = (
         <div className="NewPaymentForm">
@@ -59,7 +64,7 @@ export default class NewPaymentForm extends React.Component {
               thousandSeparator={true}
               prefix={'$'}
               decimalScale={2}
-              fixedDecimalScale={2}
+              fixedDecimalScale={true}
               required
             />
 

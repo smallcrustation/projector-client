@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<div
+  className="NewProjectForm"
+>
+  <h3
+    className="low-header"
+  >
+    New Project
+  </h3>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      role="alert"
+    />
+    <label
+      htmlFor="project_name"
+    >
+      Project Name
+    </label>
+    <input
+      id="project_name"
+      name="project_name"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="location"
+    >
+      Location
+    </label>
+    <input
+      id="location"
+      name="location"
+      required={true}
+      type="address"
+    />
+    <label
+      htmlFor="budget"
+    >
+      Budget
+    </label>
+    <input
+      className="dollar-input"
+      id="budget"
+      name="budget"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseUp={[Function]}
+      placeholder="$0.00"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;

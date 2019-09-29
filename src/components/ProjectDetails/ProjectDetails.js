@@ -11,7 +11,11 @@ export default class ProjectDetails extends React.Component {
 
   renderProjectTable() {
     if (this.props.loading) {
-      return <p className="loading-dots" style={{textAlign: 'center'}}>Loading</p>
+      return (
+        <p className="loading-dots" style={{ textAlign: 'center' }}>
+          Loading
+        </p>
+      )
     }
 
     const fm = formatMoney
@@ -32,7 +36,9 @@ export default class ProjectDetails extends React.Component {
             <td>Project Budget to Date</td>
             <td>{fm(project.budget_total)}</td>
           </tr>
-          <tr><td className="space">&nbsp;</td></tr>
+          <tr>
+            <td className="space">&nbsp;</td>
+          </tr>
           <tr>
             <td>Completed to Date</td>
             <td>{fm(project.total_completed)}</td>
@@ -45,7 +51,9 @@ export default class ProjectDetails extends React.Component {
             <td>Current Amount Due</td>
             <td>{fm(project.current_payment)}</td>
           </tr>
-          <tr><td className="space">&nbsp;</td></tr>
+          <tr>
+            <td className="space">&nbsp;</td>
+          </tr>
           <tr className="thick-border">
             <td>Balance to Finish</td>
             <td>{fm(project.budget_total - project.total_completed)}</td>
@@ -53,8 +61,10 @@ export default class ProjectDetails extends React.Component {
           <tr>
             <td>Completion</td>
             <td>
-              {((project.total_completed / project.budget_total) * 100)
-              .toFixed(2)} %
+              {((project.total_completed / project.budget_total) * 100).toFixed(
+                2
+              )}{' '}
+              %
             </td>
           </tr>
         </tbody>
@@ -64,12 +74,20 @@ export default class ProjectDetails extends React.Component {
 
   render() {
     // console.log(this.context.project)
-    return (
-      <div className="ProjectDetails">
-        {!this.context.project?'':<h3>{this.context.project.project_name}</h3>}
-        <h3 className="ProjectDetails_header">Details</h3>
-        {this.renderProjectTable()}
-        {/* <ProjectContextConsumer> RENDER PROPS VERSION
+    // for smoke test
+    if (!this.context) {
+      return <p>No Context</p>
+    } else {
+      return (
+        <div className="ProjectDetails">
+          {!this.context.project ? (
+            ''
+          ) : (
+            <h3>{this.context.project.project_name}</h3>
+          )}
+          <h3 className="ProjectDetails_header">Details</h3>
+          {this.renderProjectTable()}
+          {/* <ProjectContextConsumer> RENDER PROPS VERSION
           {value => {
             // console.log(value.project)
             const project = value.project
@@ -127,7 +145,8 @@ export default class ProjectDetails extends React.Component {
             }
           }}
         </ProjectContextConsumer> */}
-      </div>
-    )
+        </div>
+      )
+    }
   }
 }

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<div
+  className="ProjectsList"
+>
+  <h3
+    className="ProjectsList__header"
+  >
+    Projects
+  </h3>
+  <section>
+    <ul
+      className="ProjectsList__ul"
+    >
+      <p>
+        No Consumer Context
+      </p>
+    </ul>
+  </section>
+</div>
+`;

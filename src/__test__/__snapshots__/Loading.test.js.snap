@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<img
+  alt="Loading..."
+  src="loading.gif"
+  style={
+    Object {
+      "display": "block",
+      "marginLeft": "auto",
+      "marginRight": "auto",
+    }
+  }
+/>
+`;

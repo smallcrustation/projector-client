@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<header
+  className="Header"
+>
+  <a
+    className="Header__h1"
+    href="/"
+    onClick={[Function]}
+  >
+    <h1
+      className="Header__h1"
+    >
+      Projector
+    </h1>
+  </a>
+  <nav
+    className="logged-out-nav nav-bar"
+  >
+    <a
+      className="link-btn"
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+    <a
+      className="link-btn"
+      href="/createAccount"
+      onClick={[Function]}
+    >
+      Create
+    </a>
+  </nav>
+</header>
+`;

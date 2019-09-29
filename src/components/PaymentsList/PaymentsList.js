@@ -10,6 +10,11 @@ export default class PaymentsList extends React.Component {
   static contextType = ProjectContext
 
   renderPayments() {
+    // for smoke test
+    if (!this.context) {
+      return <p>No Context</p>
+    }
+    
     const payments = this.context.payments
 
     if (this.props.loading) return <p className="loading-dots">Loading</p>

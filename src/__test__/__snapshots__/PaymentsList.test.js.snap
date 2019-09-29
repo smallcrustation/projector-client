@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing Renders with no crashing and matches snapshot 1`] = `
+<div
+  className="PaymentsList"
+>
+  <h3>
+    Payments
+  </h3>
+  <section>
+    <p>
+      No Context
+    </p>
+    <button
+      className="PaymentsList__btn"
+    >
+      New Payment Request
+    </button>
+  </section>
+</div>
+`;
