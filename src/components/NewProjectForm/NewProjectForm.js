@@ -41,10 +41,10 @@ export default class NewProjectForm extends React.Component {
           <div role="alert">{error && <p className="error">{error}</p>}</div>
 
           <label htmlFor="project_name">Project Name</label>
-          <input type="text" id="project_name" name="project_name" required/>
+          <input type="text" id="project_name" name="project_name" maxLength="15" required/>
 
           <label htmlFor="location">Location</label>
-          <input type="address" id="location" name="location" required/>
+          <input type="address" id="location" name="location" maxLength="25" required/>
 
           <label htmlFor="budget">Budget</label>
           <NumberFormat

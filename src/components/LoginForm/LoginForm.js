@@ -43,11 +43,11 @@ export default class Landing extends React.Component {
           <div><Loading /></div>
         ) : (
           <div>
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" name="username" required />
+            <label htmlFor="username" >Username</label>
+            <input type="text" id="username" name="username" maxLength="25" required />
 
             <label htmlFor="pass">Password</label>
-            <input type="password" id="pass" name="pass" required />
+            <input type="password" id="pass" name="pass" maxLength="25" required />
 
             <input type="submit" value="Login" />
           </div>
