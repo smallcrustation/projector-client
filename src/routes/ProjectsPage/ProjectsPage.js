@@ -13,12 +13,18 @@ export default class ProjectsPage extends React.Component {
     return this.props.history.push('./newProject')
   }
 
+  onClickProject = (id) => {
+    return this.props.history.push(`/projects/${id}`)
+  }
+
   render() {
     // const { error } = this.state
     return (
       <div className="ProjectsPage">
         <button className="ripple" onClick={this.onClickNewProject}>New Project</button>
-          <ProjectsList />
+          <ProjectsList 
+            onClickProject={this.onClickProject}
+          />
       </div>
     )
   }

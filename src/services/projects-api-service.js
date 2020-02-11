@@ -54,6 +54,18 @@ const projectApiService = {
     }
 
     return res.json()
+  },
+
+  async removeProjectById(project_id){
+    const res = await fetch(`${config.API_ENDPOINT}/projects/${project_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    if(!res.ok){
+      return res.json().then(e => Promise.reject(e))
+    }
   }
   
 }

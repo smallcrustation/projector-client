@@ -26,11 +26,12 @@ export default class Landing extends React.Component {
       TokenService.saveAuthToken(user.authToken)
       this.context.setUser('logged in')
       // console.log('LOGIN SUCCESS')
-      this.setState({ loading: false })
+      this.setState({ error: null, loading: false })
       this.props.onSuccessfulLogin()
     } catch (err) {
-      this.setState({ error: err.error, loading: false })
-      // console.log('LOGIN ERROR')
+      // console.log(err)
+      this.setState({error: err.error, loading: false})
+      // this.setState({ error: err.error, loading: false })
     }
   }
 

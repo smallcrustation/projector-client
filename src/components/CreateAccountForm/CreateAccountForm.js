@@ -55,7 +55,7 @@ export default class Landing extends React.Component {
             </div>
             <div>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" maxLength="15" required />
+              <input type="email" id="email" name="email" maxLength="25" required />
             </div>
             <div>
               <label htmlFor="pass">Password</label>
