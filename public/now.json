@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": "projector",
+  "name": "projector",
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    }
+  ]
+}

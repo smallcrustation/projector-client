@@ -1,17 +1,22 @@
-.nav-bar a{
-  padding: .5em 1em;
+.nav-bar a {
+  padding: 0.5em .5em;
   margin: 0;
   box-shadow: none;
   border-bottom: none;
   border-top: none;
 }
 
-.nav-bar a:nth-child(even){
+.nav-bar a:nth-child(even) {
   border-left: none;
 }
 
-
-.nav-bar{
+.nav-bar {
   display: flex;
   align-content: flex-end;
+}
+
+@media only screen and (min-width: 450px) {
+  .nav-bar a {
+    padding: 0.5em 1em;
+  }
 }
