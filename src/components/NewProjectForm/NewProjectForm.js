@@ -1,5 +1,5 @@
 import React from 'react'
-import NumberFormat from 'react-number-format'
+import { NumericFormat } from 'react-number-format'
 
 import ProjectsApiService from '../../services/projects-api-service'
 
@@ -57,7 +57,7 @@ export default class NewProjectForm extends React.Component {
           />
 
           <label htmlFor="budget">Budget</label>
-          <NumberFormat
+          <NumericFormat
             isAllowed={values => {
               const { formattedValue, floatValue } = values
               return formattedValue === '' || floatValue <= 10000000000

@@ -1,7 +1,7 @@
 import React from 'react'
 import PaymentsApiService from '../../services/payments-api-service'
 import { ProjectContext } from '../../contexts/ProjectContext'
-import NumberFormat from 'react-number-format'
+import { NumericFormat } from 'react-number-format'
 
 import './NewPaymentForm.css'
 
@@ -51,7 +51,7 @@ export default class NewPaymentForm extends React.Component {
             <label htmlFor="payment" className="NewPaymentForm__label">
               Amount
             </label>
-            <NumberFormat
+            <NumericFormat
               name="payment"
               id="payment"
               className="dollar-input"
